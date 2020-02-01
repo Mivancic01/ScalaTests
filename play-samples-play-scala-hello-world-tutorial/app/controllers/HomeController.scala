@@ -5,6 +5,7 @@ import play.api._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import play.api.libs.json.{JsValue, Json}
 
 case class Todo(name: String, priority: Int, complete: Boolean)
 
@@ -83,5 +84,16 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     val populatedForm = todoForm.bindFromRequest()(request)
     Ok("TODO FORM!")
   }
+
+  def JsonIndex= Action(parse.json) { request =>
+    // ...the request body is automaically JSON -- no need to call `asJson`:
+    val json: JsValue = request.body
+    Ok(Json.obj(
+      "message" -> "The request contained JSON data",
+      "data" -> json
+    ))
+  }
+
+  def TodoIndex= TODO
   
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Jan 30 14:45:56 CET 2020
+// @DATE:Sun Feb 02 00:43:06 CET 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -44,6 +44,16 @@ package controllers.javascript {
       """
         function(msg0,times1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "testTimes/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("msg", msg0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("times", times1))})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def JsonIndex: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.JsonIndex",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "JsonIndex"})
         }
       """
     )
@@ -100,7 +110,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -108,12 +118,86 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:30
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:18
+  class ReverseMarkLewisController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:19
+    def product: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.product",
+      """
+        function(prodType0,prodNum1) {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "product/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("prodType", prodType0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("prodNum", prodNum1))})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:22
+    def validateLoginGet: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.validateLoginGet",
+      """
+        function(username0,password1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "validateGet" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("username", username0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1)])})
+        }
+      """
+    )
+  
+    // @LINE:24
+    def createUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.createUser",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "createUser"})
+        }
+      """
+    )
+  
+    // @LINE:26
+    def validateLoginPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.validateLoginPost",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "validatePost"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def TodoIndex: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.TodoIndex",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "TodoIndex"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.login",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
         }
       """
     )

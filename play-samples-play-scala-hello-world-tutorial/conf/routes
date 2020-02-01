@@ -12,6 +12,18 @@ GET     /headers                            controllers.HomeController.headers
 GET     /display                            controllers.HomeController.displayInfo
 GET     /testTwirl/:name                    controllers.HomeController.TestTwirl(name: String)
 GET     /testForm                           controllers.HomeController.TestForm
+GET     /JsonIndex                          controllers.HomeController.JsonIndex
+
+#Mark Lewis Controller
+GET     /TodoIndex                          controllers.MarkLewisController.TodoIndex
+GET     /product/:prodType/:prodNum         controllers.MarkLewisController.product(prodType, prodNum: Int)
+GET     /productRE/$prodType<[a-z]{2}\d\d>/:prodNum         controllers.MarkLewisController.product(prodType, prodNum: Int)
+GET     /login                              controllers.MarkLewisController.login
+GET     /validateGet                        controllers.MarkLewisController.validateLoginGet(username, password)
++nocsrf
+POST    /createUser                         controllers.MarkLewisController.createUser
++nocsrf
+POST    /validatePost                       controllers.MarkLewisController.validateLoginPost
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Thu Jan 30 14:45:56 CET 2020
+// @DATE:Sun Feb 02 00:43:06 CET 2020
 
 
 package router {
