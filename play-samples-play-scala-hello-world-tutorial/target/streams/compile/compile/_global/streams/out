@@ -1,6 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\conf\routes:24:1: ambiguous implicit values:[0m
-[0m[[0m[31merror[0m] [0m[0m both method wrapJava in object HandlerInvokerFactory of type => play.core.routing.HandlerInvokerFactory[play.mvc.Result][0m
-[0m[[0m[31merror[0m] [0m[0m and method wrapJavaPromise in object HandlerInvokerFactory of type => play.core.routing.HandlerInvokerFactory[java.util.concurrent.CompletionStage[play.mvc.Result]][0m
-[0m[[0m[31merror[0m] [0m[0m match expected type play.core.routing.HandlerInvokerFactory[T][0m
-[0m[[0m[31merror[0m] [0m[0mPOST    /createUser                         controllers.MarkLewisController.createUser[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\views\login1.scala.html:29:20: An implicit MessagesProvider instance was not found.  Please see https://www.playframework.com/documentation/latest/ScalaForms#Passing-MessagesProvider-to-Form-Helpers[0m
+[0m[[0m[31merror[0m] [0m[0m  @helper.inputText(loginForm("Username"))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\views\login1.scala.html:30:20: An implicit MessagesProvider instance was not found.  Please see https://www.playframework.com/documentation/latest/ScalaForms#Passing-MessagesProvider-to-Form-Helpers[0m
+[0m[[0m[31merror[0m] [0m[0m  @helper.inputText(loginForm("Password"))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

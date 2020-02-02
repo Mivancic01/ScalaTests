@@ -15,15 +15,15 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Flash,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/()(implicit flash: Flash):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.4*/("""
+Seq[Any](format.raw/*1.27*/("""
 
 """),_display_(/*3.2*/main("Welcome")/*3.17*/ {_display_(Seq[Any](format.raw/*3.19*/("""
 """),_display_(/*4.2*/defining(play.core.PlayVersion.current)/*4.41*/ { version =>_display_(Seq[Any](format.raw/*4.54*/("""
@@ -98,9 +98,9 @@ Seq[Any](format.raw/*1.4*/("""
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(flash:Flash): play.twirl.api.HtmlFormat.Appendable = apply()(flash)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:(() => (Flash) => play.twirl.api.HtmlFormat.Appendable) = () => (flash) => apply()(flash)
 
   def ref: this.type = this
 
@@ -109,10 +109,10 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-01-30T10:20:58.249472900
+                  DATE: 2020-02-02T10:19:16.653463800
                   SOURCE: D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/app/views/index.scala.html
-                  HASH: 9957fdfe106664a252e5a4516c745598372500e4
-                  MATRIX: 722->1|818->3|848->8|871->23|910->25|938->28|985->67|1035->80|1065->84|2538->1529|2567->1536|2694->1636|2722->1643|2855->1749|2883->1756|3020->1866|3048->1873|3169->1966|3198->1973|4878->3626|4893->3632|4937->3655|5049->3741|5085->3756|5118->3762|5181->3795
+                  HASH: 799032ac30098648075482e0373d9732ed17330f
+                  MATRIX: 728->1|848->26|878->31|901->46|940->48|968->51|1015->90|1065->103|1095->107|2568->1552|2597->1559|2724->1659|2752->1666|2885->1772|2913->1779|3050->1889|3078->1896|3199->1989|3228->1996|4908->3649|4923->3655|4967->3678|5079->3764|5115->3779|5148->3785|5211->3818
                   LINES: 21->1|26->1|28->3|28->3|28->3|29->4|29->4|29->4|31->6|55->30|55->30|56->31|56->31|57->32|57->32|58->33|58->33|58->33|58->33|88->63|88->63|88->63|91->66|91->66|92->67|95->70
                   -- GENERATED --
               */

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 00:43:06 CET 2020
+// @DATE:Sun Feb 02 22:55:29 CET 2020
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   HomeController_2: controllers.HomeController,
   // @LINE:18
   MarkLewisController_0: controllers.MarkLewisController,
-  // @LINE:30
+  // @LINE:32
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -28,7 +28,7 @@ class Routes(
     HomeController_2: controllers.HomeController,
     // @LINE:18
     MarkLewisController_0: controllers.MarkLewisController,
-    // @LINE:30
+    // @LINE:32
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_2, MarkLewisController_0, Assets_1, "/")
 
@@ -59,6 +59,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """validateGet""", """controllers.MarkLewisController.validateLoginGet(username:String, password:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """createUser""", """controllers.MarkLewisController.createUser"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """validatePost""", """controllers.MarkLewisController.validateLoginPost"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """validateForm""", """controllers.MarkLewisController.validateLoginForm"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.MarkLewisController.logout"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addTask""", """controllers.MarkLewisController.addTask"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteTask""", """controllers.MarkLewisController.deleteTask"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -319,7 +323,7 @@ class Routes(
     )
   )
 
-  // @LINE:24
+  // @LINE:23
   private[this] lazy val controllers_MarkLewisController_createUser14_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("createUser")))
   )
@@ -333,11 +337,11 @@ class Routes(
       "POST",
       this.prefix + """createUser""",
       """""",
-      Seq("""nocsrf""")
+      Seq()
     )
   )
 
-  // @LINE:26
+  // @LINE:24
   private[this] lazy val controllers_MarkLewisController_validateLoginPost15_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("validatePost")))
   )
@@ -351,15 +355,87 @@ class Routes(
       "POST",
       this.prefix + """validatePost""",
       """""",
-      Seq("""nocsrf""")
+      Seq()
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_Assets_versioned16_route = Route("GET",
+  // @LINE:25
+  private[this] lazy val controllers_MarkLewisController_validateLoginForm16_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("validateForm")))
+  )
+  private[this] lazy val controllers_MarkLewisController_validateLoginForm16_invoker = createInvoker(
+    MarkLewisController_0.validateLoginForm,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "validateLoginForm",
+      Nil,
+      "POST",
+      this.prefix + """validateForm""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_MarkLewisController_logout17_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
+  )
+  private[this] lazy val controllers_MarkLewisController_logout17_invoker = createInvoker(
+    MarkLewisController_0.logout,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "logout",
+      Nil,
+      "GET",
+      this.prefix + """logout""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_MarkLewisController_addTask18_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addTask")))
+  )
+  private[this] lazy val controllers_MarkLewisController_addTask18_invoker = createInvoker(
+    MarkLewisController_0.addTask,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "addTask",
+      Nil,
+      "POST",
+      this.prefix + """addTask""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_MarkLewisController_deleteTask19_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteTask")))
+  )
+  private[this] lazy val controllers_MarkLewisController_deleteTask19_invoker = createInvoker(
+    MarkLewisController_0.deleteTask,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "deleteTask",
+      Nil,
+      "POST",
+      this.prefix + """deleteTask""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:32
+  private[this] lazy val controllers_Assets_versioned20_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned16_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned20_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -460,22 +536,46 @@ class Routes(
         controllers_MarkLewisController_validateLoginGet13_invoker.call(MarkLewisController_0.validateLoginGet(username, password))
       }
   
-    // @LINE:24
+    // @LINE:23
     case controllers_MarkLewisController_createUser14_route(params@_) =>
       call { 
         controllers_MarkLewisController_createUser14_invoker.call(MarkLewisController_0.createUser)
       }
   
-    // @LINE:26
+    // @LINE:24
     case controllers_MarkLewisController_validateLoginPost15_route(params@_) =>
       call { 
         controllers_MarkLewisController_validateLoginPost15_invoker.call(MarkLewisController_0.validateLoginPost)
       }
   
-    // @LINE:30
-    case controllers_Assets_versioned16_route(params@_) =>
+    // @LINE:25
+    case controllers_MarkLewisController_validateLoginForm16_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_validateLoginForm16_invoker.call(MarkLewisController_0.validateLoginForm)
+      }
+  
+    // @LINE:26
+    case controllers_MarkLewisController_logout17_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_logout17_invoker.call(MarkLewisController_0.logout)
+      }
+  
+    // @LINE:27
+    case controllers_MarkLewisController_addTask18_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_addTask18_invoker.call(MarkLewisController_0.addTask)
+      }
+  
+    // @LINE:28
+    case controllers_MarkLewisController_deleteTask19_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_deleteTask19_invoker.call(MarkLewisController_0.deleteTask)
+      }
+  
+    // @LINE:32
+    case controllers_Assets_versioned20_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned16_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned20_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

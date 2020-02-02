@@ -20,10 +20,12 @@ GET     /product/:prodType/:prodNum         controllers.MarkLewisController.prod
 GET     /productRE/$prodType<[a-z]{2}\d\d>/:prodNum         controllers.MarkLewisController.product(prodType, prodNum: Int)
 GET     /login                              controllers.MarkLewisController.login
 GET     /validateGet                        controllers.MarkLewisController.validateLoginGet(username, password)
-+nocsrf
 POST    /createUser                         controllers.MarkLewisController.createUser
-+nocsrf
 POST    /validatePost                       controllers.MarkLewisController.validateLoginPost
+POST    /validateForm                       controllers.MarkLewisController.validateLoginForm
+GET     /logout                             controllers.MarkLewisController.logout
+POST    /addTask                            controllers.MarkLewisController.addTask
+POST    /deleteTask                         controllers.MarkLewisController.deleteTask
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 00:43:06 CET 2020
+// @DATE:Sun Feb 02 22:55:29 CET 2020
 
 import play.api.mvc.Call
 
@@ -73,14 +73,14 @@ package controllers {
   
   }
 
-  // @LINE:30
+  // @LINE:32
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:30
+    // @LINE:32
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -115,13 +115,31 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "validateGet" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("username", username)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:24
+    // @LINE:23
     def createUser(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "createUser")
     }
   
+    // @LINE:27
+    def addTask(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "addTask")
+    }
+  
+    // @LINE:28
+    def deleteTask(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "deleteTask")
+    }
+  
     // @LINE:26
+    def logout(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "logout")
+    }
+  
+    // @LINE:24
     def validateLoginPost(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "validatePost")
@@ -131,6 +149,12 @@ package controllers {
     def TodoIndex(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "TodoIndex")
+    }
+  
+    // @LINE:25
+    def validateLoginForm(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "validateForm")
     }
   
     // @LINE:21

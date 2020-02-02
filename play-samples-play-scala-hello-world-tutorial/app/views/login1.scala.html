@@ -1,9 +1,11 @@
-@()
+@(loginForm: Form[LoginData])(implicit request: MessagesRequestHeader, flash: Flash)
 
 @main("Login"){
-<h2>Login</h2>
+<h2>Login page</h2>
 
 <form method="get" action="validateGet">
+    <br>
+    <h3>Get Task List without User Validation</h3>
     Username: <input type="text" name="username">
     <br>
     Password: <input type="password" name="password">
@@ -12,6 +14,9 @@
 </form>
 
 <form method="post" action="@routes.MarkLewisController.validateLoginPost()">
+    @helper.CSRF.formField
+    <br>
+    <h3>Login as User</h3>
     Username: <input type="text" name="username">
     <br>
     Password: <input type="password" name="password">
@@ -19,7 +24,17 @@
     <input type="submit">
 </form>
 
+@helper.form(action = routes.MarkLewisController.validateLoginForm()){
+  @helper.CSRF.formField
+  @helper.inputText(loginForm("Username"))
+  @helper.inputText(loginForm("Password"))
+  <div class="form-actions">
+      <button type="submit">Login</button>
+  </div>
+}
+
 <form method="post" action="@routes.MarkLewisController.createUser()">
+    @helper.CSRF.formField
     <br>
     <h3>Create User</h3>
     Username: <input type="text" name="username">

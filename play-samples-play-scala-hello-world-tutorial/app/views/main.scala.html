@@ -4,7 +4,7 @@
  * two arguments, a `String` for the title of the page and an `Html`
  * object to insert into the body of the page.
  *@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(implicit flash: Flash)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +26,7 @@
             <h1>Play Hello World Web Tutorial</h1>
         </div>
     </section>
+    @flash.get("error")
     @content
 </body>
 

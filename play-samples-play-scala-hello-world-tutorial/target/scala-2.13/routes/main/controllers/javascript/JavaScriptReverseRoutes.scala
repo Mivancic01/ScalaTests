@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 00:43:06 CET 2020
+// @DATE:Sun Feb 02 22:55:29 CET 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -110,7 +110,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:30
+  // @LINE:32
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -118,7 +118,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:30
+    // @LINE:32
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -162,7 +162,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:23
     def createUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MarkLewisController.createUser",
       """
@@ -172,7 +172,37 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:27
+    def addTask: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.addTask",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addTask"})
+        }
+      """
+    )
+  
+    // @LINE:28
+    def deleteTask: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.deleteTask",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteTask"})
+        }
+      """
+    )
+  
     // @LINE:26
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:24
     def validateLoginPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MarkLewisController.validateLoginPost",
       """
@@ -188,6 +218,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "TodoIndex"})
+        }
+      """
+    )
+  
+    // @LINE:25
+    def validateLoginForm: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.validateLoginForm",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "validateForm"})
         }
       """
     )
