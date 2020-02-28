@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\views\login1.scala.html:29:20: An implicit MessagesProvider instance was not found.  Please see https://www.playframework.com/documentation/latest/ScalaForms#Passing-MessagesProvider-to-Form-Helpers[0m
-[0m[[0m[31merror[0m] [0m[0m  @helper.inputText(loginForm("Username"))[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\views\login1.scala.html:30:20: An implicit MessagesProvider instance was not found.  Please see https://www.playframework.com/documentation/latest/ScalaForms#Passing-MessagesProvider-to-Form-Helpers[0m
-[0m[[0m[31merror[0m] [0m[0m  @helper.inputText(loginForm("Password"))[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\model\MarkoMemoryModel.scala:56:18: val keyword in for comprehension is deprecated[0m
+[0m[[0m[31merror[0m] [0m[0m      val filter = users.filter(_.username === username)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

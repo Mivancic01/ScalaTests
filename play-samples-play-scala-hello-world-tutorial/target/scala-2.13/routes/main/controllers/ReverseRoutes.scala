@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 22:55:29 CET 2020
+// @DATE:Fri Feb 07 10:41:39 CET 2020
 
 import play.api.mvc.Call
 
@@ -73,14 +73,14 @@ package controllers {
   
   }
 
-  // @LINE:32
+  // @LINE:34
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:32
+    // @LINE:34
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -121,10 +121,22 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "createUser")
     }
   
+    // @LINE:29
+    def testAsync(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "testAsync")
+    }
+  
     // @LINE:27
     def addTask(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addTask")
+    }
+  
+    // @LINE:30
+    def delayAsync(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "delayAsync")
     }
   
     // @LINE:28

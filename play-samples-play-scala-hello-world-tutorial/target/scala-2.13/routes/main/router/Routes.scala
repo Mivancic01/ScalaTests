@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 22:55:29 CET 2020
+// @DATE:Fri Feb 07 10:41:39 CET 2020
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   HomeController_2: controllers.HomeController,
   // @LINE:18
   MarkLewisController_0: controllers.MarkLewisController,
-  // @LINE:32
+  // @LINE:34
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -28,7 +28,7 @@ class Routes(
     HomeController_2: controllers.HomeController,
     // @LINE:18
     MarkLewisController_0: controllers.MarkLewisController,
-    // @LINE:32
+    // @LINE:34
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_2, MarkLewisController_0, Assets_1, "/")
 
@@ -63,6 +63,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.MarkLewisController.logout"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addTask""", """controllers.MarkLewisController.addTask"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteTask""", """controllers.MarkLewisController.deleteTask"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """testAsync""", """controllers.MarkLewisController.testAsync"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delayAsync""", """controllers.MarkLewisController.delayAsync"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -431,11 +433,47 @@ class Routes(
     )
   )
 
-  // @LINE:32
-  private[this] lazy val controllers_Assets_versioned20_route = Route("GET",
+  // @LINE:29
+  private[this] lazy val controllers_MarkLewisController_testAsync20_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("testAsync")))
+  )
+  private[this] lazy val controllers_MarkLewisController_testAsync20_invoker = createInvoker(
+    MarkLewisController_0.testAsync,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "testAsync",
+      Nil,
+      "GET",
+      this.prefix + """testAsync""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:30
+  private[this] lazy val controllers_MarkLewisController_delayAsync21_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delayAsync")))
+  )
+  private[this] lazy val controllers_MarkLewisController_delayAsync21_invoker = createInvoker(
+    MarkLewisController_0.delayAsync,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.MarkLewisController",
+      "delayAsync",
+      Nil,
+      "GET",
+      this.prefix + """delayAsync""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:34
+  private[this] lazy val controllers_Assets_versioned22_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned20_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned22_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -572,10 +610,22 @@ class Routes(
         controllers_MarkLewisController_deleteTask19_invoker.call(MarkLewisController_0.deleteTask)
       }
   
-    // @LINE:32
-    case controllers_Assets_versioned20_route(params@_) =>
+    // @LINE:29
+    case controllers_MarkLewisController_testAsync20_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_testAsync20_invoker.call(MarkLewisController_0.testAsync)
+      }
+  
+    // @LINE:30
+    case controllers_MarkLewisController_delayAsync21_route(params@_) =>
+      call { 
+        controllers_MarkLewisController_delayAsync21_invoker.call(MarkLewisController_0.delayAsync)
+      }
+  
+    // @LINE:34
+    case controllers_Assets_versioned22_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned20_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned22_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Directories/EssentialPlay Test Programs/ScalaTests/play-samples-play-scala-hello-world-tutorial/conf/routes
-// @DATE:Sun Feb 02 22:55:29 CET 2020
+// @DATE:Fri Feb 07 10:41:39 CET 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -110,7 +110,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:32
+  // @LINE:34
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -118,7 +118,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:32
+    // @LINE:34
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -172,12 +172,32 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:29
+    def testAsync: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.testAsync",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "testAsync"})
+        }
+      """
+    )
+  
     // @LINE:27
     def addTask: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MarkLewisController.addTask",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addTask"})
+        }
+      """
+    )
+  
+    // @LINE:30
+    def delayAsync: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.MarkLewisController.delayAsync",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "delayAsync"})
         }
       """
     )
