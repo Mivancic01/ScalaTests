@@ -35,39 +35,40 @@ class MarkLewisController @Inject()(cc: MessagesControllerComponents)(implicit e
 }
 
   def validateLoginPost = Action{ request =>
-  val postVals = request.body.asFormUrlEncoded
-  postVals.map{ args =>
-  val username = args("username").head
-  val password = args("password").head
-  if(MarkLewisMemoryModel.validateUser(username, password)){
-  Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> username)
-}
-  else{
-  Redirect(routes.MarkLewisController.login()).flashing("error" -> "Invalid username password combination")
-}
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
+    request.body.asFormUrlEncoded match {
+      case Some(args) =>
+      {
+        if(MarkLewisMemoryModel.validateUser(args("username").head, args("password").head))
+          Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> args("username").head)
+        else
+          Redirect(routes.MarkLewisController.login()).flashing("error" -> "Invalid username password combination")
+      }
+
+      case None => Redirect(routes.MarkLewisController.login())
+    }
 }
 
   def createUser() = Action{ request =>
-  val postVals = request.body.asFormUrlEncoded
-  postVals.map{ args =>
-  val username = args("username").head
-  val password = args("password").head
-  if(MarkLewisMemoryModel.createUser(username, password)){
-  Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> username)
-}
-  else{
-  Redirect(routes.MarkLewisController.login()).flashing("error" -> "Creation failed")
-}
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
+    request.body.asFormUrlEncoded match {
+      case Some(args) =>
+      {
+        if(MarkLewisMemoryModel.createUser(args("username").head, args("password").head))
+          Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> args("username").head)
+        else
+          Redirect(routes.MarkLewisController.login()).flashing("error" -> "Creation failed")
+      }
+
+      case None => Redirect(routes.MarkLewisController.login())
+    }
 }
 
   def TodoIndex = Action{ implicit request =>
-  val usernameOption = request.session.get("username")
-  usernameOption.map{ username =>
-  val tasks = MarkLewisMemoryModel.getTasks(username)
-  Ok(views.html.login(tasks))
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
+    request.session.get("username") match {
+      case Some(username) =>
+        val tasks = MarkLewisMemoryModel.getTasks(username)
+        Ok(views.html.login(tasks))
+      case None => Redirect(routes.MarkLewisController.login())
+    }
 }
 
   def logout = Action{
@@ -75,39 +76,35 @@ class MarkLewisController @Inject()(cc: MessagesControllerComponents)(implicit e
 }
 
   def addTask = Action{ implicit request =>
-  val usernameOption = request.session.get("username")
-  usernameOption.map{username =>
-  val postVals = request.body.asFormUrlEncoded
-  postVals.map{ args =>
-  val task = args("newTask").head
-  MarkLewisMemoryModel.addTask(username, task)
-  Redirect(routes.MarkLewisController.TodoIndex())
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
+    (request.session.get("username"), request.body.asFormUrlEncoded) match {
+      case (Some(username), Some(args)) => {
+        val task = args("newTask").head
+        MarkLewisMemoryModel.addTask(username, task)
+        Redirect(routes.MarkLewisController.TodoIndex())
+      }
+      case (_, _) => Redirect(routes.MarkLewisController.login())
+    }
 }
 
   def deleteTask = Action{ implicit request =>
-  val usernameOption = request.session.get("username")
-  usernameOption.map{username =>
-  val postVals = request.body.asFormUrlEncoded
-  postVals.map{ args =>
-  val index = args("index").head.toInt
-  MarkLewisMemoryModel.removeTask(username, index)
-  Redirect(routes.MarkLewisController.TodoIndex())
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
-}.getOrElse(Redirect(routes.MarkLewisController.login()))
+    (request.session.get("username"), request.body.asFormUrlEncoded) match {
+      case (Some(username), Some(args)) =>{
+        val index = args("index").head.toInt
+        MarkLewisMemoryModel.removeTask(username, index)
+        Redirect(routes.MarkLewisController.TodoIndex())
+      }
+      case (_, _) => Redirect(routes.MarkLewisController.login())
+    }
 }
 
   def validateLoginForm = Action{ implicit request =>
-  loginForm.bindFromRequest.fold(
-  formWithErrors => BadRequest(views.html.login1(formWithErrors)),
-  ld => if(MarkLewisMemoryModel.validateUser(ld.username, ld.password)){
-  Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> ld.username)
-}
-  else{
-  Redirect(routes.MarkLewisController.login()).flashing("error" -> "Invalid username password combination")
-}
-  )
+    loginForm.bindFromRequest.fold(
+      formWithErrors => BadRequest(views.html.login1(formWithErrors)),
+      ld => if(MarkLewisMemoryModel.validateUser(ld.username, ld.password))
+        Redirect(routes.MarkLewisController.TodoIndex()).withSession("username" -> ld.username)
+      else
+        Redirect(routes.MarkLewisController.login()).flashing("error" -> "Invalid username password combination")
+    )
 }
 
   def testAsync = Action.async{request =>
@@ -115,22 +112,22 @@ class MarkLewisController @Inject()(cc: MessagesControllerComponents)(implicit e
 }
 
   def getTraffic(msg: String) = Future{
-  val r = scala.util.Random
-  val ret = r.nextInt(5) + 2
-  Thread.sleep(ret*1000)
-  ret
+    val r = scala.util.Random
+    val ret = r.nextInt(5) + 2
+    Thread.sleep(ret*1000)
+    ret
 }
 
   def delayAsync = Action.async{request =>
-  val traffic1 = getTraffic("server1")
-  val traffic2 = getTraffic("server2")
-  val traffic3 = getTraffic("server3")
+    val traffic1 = getTraffic("server1")
+    val traffic2 = getTraffic("server2")
+    val traffic3 = getTraffic("server3")
 
-  for{
-  t1 <- traffic1
-  t2 <- traffic2
-  t3 <- traffic3
-  total = t1 + t2 + t3
-}yield Ok(s"The site is ready $t1 + $t2 + $t3")
-}
+    for{
+      t1 <- traffic1
+      t2 <- traffic2
+      t3 <- traffic3
+      total = t1 + t2 + t3
+    }yield Ok(s"The site is ready $t1 + $t2 + $t3")
+  }
 }

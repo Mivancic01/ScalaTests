@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\model\MarkoMemoryModel.scala:56:18: val keyword in for comprehension is deprecated[0m
-[0m[[0m[31merror[0m] [0m[0m      val filter = users.filter(_.username === username)[0m
-[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\EssentialPlay Test Programs\ScalaTests\play-samples-play-scala-hello-world-tutorial\app\controllers\MarkLewisController.scala:61:33: value addUser is not a member of object model.MarkLewisMemoryModel[0m
+[0m[[0m[31merror[0m] [0m[0m        if(MarkLewisMemoryModel.addUser(username, password))[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
