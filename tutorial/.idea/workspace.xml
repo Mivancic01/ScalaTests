@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0303f03f-bc43-482f-a4f1-680207b0ee8d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1a9t9wujYYsrxEhoJ5qAm3s5n1D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../essential-slick-code-3.3/essential-slick-code-3.3/chapter-04" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="play-scala-hello-world-tutorial" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="root [file:/D:/Directories/IntelliJ%20Projects/SbtTest/play-samples-play-scala-hello-world-tutorial/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="play-scala-hello-world-tutorial-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6325225604251" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="248031097" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1134086237" />
+        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="3506108077" />
+        <entry key="$PROJECT_DIR$/project/scaffold.sbt" value="162976339" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../HelloWorldExample" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../chronos" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../essential-play-code-exercises/essential-play-code-exercises/chapter1-hello" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../essential-slick-code-3.3/essential-slick-code-3.3/chapter-01" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../essential-slick-code-3.3/essential-slick-code-3.3/chapter-03" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../essential-slick-code-3.3/essential-slick-code-3.3/chapter-04" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../laplas-play-app.g8" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../play-samples-play-scala-starter-example/play-samples-play-scala-starter-example" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../play-samples/play-scala-isolated-slick-example" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../play-samples/play-scala-slick-example" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../chronos" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0303f03f-bc43-482f-a4f1-680207b0ee8d" name="Default Changelist" comment="" />
+      <created>1586159489089</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586159489089</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="280" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586167928359">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="280" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1586167928359" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1586161880523">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1586161880523" />
+    <state x="656" y="123" width="607" height="804" key="find.popup" timestamp="1586167193262">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="123" width="607" height="804" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1586167193262" />
+  </component>
+</project>

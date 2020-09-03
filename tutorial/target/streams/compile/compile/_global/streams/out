@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\IntelliJ Projects\SbtTest\play-samples-play-scala-hello-world-tutorial\app\controllers\HomeController.scala:29:39: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Seq[models.Model.MessageTable#TableElementType][0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  Seq[models.Model.Message][0m
+[0m[[0m[31merror[0m] [0m[0m required: Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m    val seq: Nothing = Model.testQuery()[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Directories\IntelliJ Projects\SbtTest\play-samples-play-scala-hello-world-tutorial\app\controllers\HomeController.scala:30:19: value mkString is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m    val str = seq.mkString("\n")[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
